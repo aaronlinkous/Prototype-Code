@@ -1,0 +1,122 @@
+<!DOCTYPE  HTML>
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="canvas.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="ui.css" media="screen" />
+
+		<link rel="stylesheet" type="text/css" href="modals.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="modal_anim.css" media="screen" />
+
+		<script type="text/javascript" src="../scripts/jquery.js"></script>
+		<script type="text/javascript" src="../scripts/jquery.ui.js"></script>
+		<script type="text/javascript" src="../scripts/modal.js"></script>
+		<script type="text/javascript" src="../scripts/misc.js"></script>
+		<script type="text/javascript" src="../scripts/canvas.js"></script>
+		
+		<script type="text/javascript" src="http://use.typekit.com/xef6elp.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	</head>
+	<body>
+
+		<aside id="styleguide_close"></aside>
+		<aside id="styleguide">
+			<ul>
+				<li id="style_skg_headline" class="etext"><span class="style_icon">T</span><span style="color: #ff00ff;text-shadow: 1px 1px 0 #fff;	text-decoration: underline;">SKG Headline</span></li>
+				<li id="style_skg_box" class="ebox"><span class="style_icon">B</span><span style="color: #a4e31c;text-shadow: 1px 1px 0 #444;">SKG Box</span></li>
+				<li id="style_skg_style"class="etext"><span class="style_icon">B</span><span style="color: #0c81d2;text-shadow: 1px 1px 0 #fff;">SKG Style</span></li>
+			</ul>
+		</aside>
+		<nav>
+			<div class="grouped">
+				<button id="bold" class="attr inactive_tool left multi">B</button>
+				<button id="italic" class="attr inactive_tool center multi">I</button>
+				<button id="underline" class="attr inactive_tool right multi">U</button>
+			</div>
+
+			<div class="grouped">
+				<button id="text_align_l" class="attr inactive_tool left ind icon"><img src="../images/text_align_l.png" /></button>
+				<button id="text_align_c" class="attr inactive_tool center ind icon"><img src="../images/text_align_c.png" /></button>
+				<button id="text_align_r" class="attr inactive_tool right ind icon"><img src="../images/text_align_r.png" /></button>
+			</div>
+
+			<div class="grouped together">
+				<button id="align_t" class="action inactive_tool left icon" data-action="align" data-variable="t"><img src="../images/align_t.png" /></button>
+				<button id="align_m" class="action inactive_tool center icon" data-action="align" data-variable="m"><img src="../images/align_m.png" /></button>
+				<button id="align_b" class="action inactive_tool right icon" data-action="align" data-variable="b"><img src="../images/align_b.png" /></button>
+			</div>
+
+			<div class="grouped together">
+				<button id="align_l" class="action inactive_tool left icon" data-action="align" data-variable="l"><img src="../images/align_l.png" /></button>
+				<button id="align_c" class="action inactive_tool center icon" data-action="align" data-variable="c"><img src="../images/align_c.png" /></button>
+				<button id="align_r" class="action inactive_tool right icon" data-action="align" data-variable="r"><img src="../images/align_r.png" /></button>
+			</div>
+
+			<div class="grouped">
+				<button id="fore" class="action inactive_tool icon left icon" data-action="layer" data-variable="+"><img src="../images/fore.png" /></button>
+				<button id="back" class="action inactive_tool icon right icon pair" data-action="layer" data-variable="-"><img src="../images/back.png" /></button>
+			</div>
+
+			<div class="grouped">
+				<button id="ul" class="attr inactive_tool icon"><img src="../images/ul.png" /></button>
+			</div>
+
+			<div class="grouped together">
+				<button id="text_color_badge" class="action inactive_tool left"><b>T</b></button>
+				<button id="text_color_hex" class="action inactive_tool right pair">#</button>
+			</div>
+
+			<div class="grouped">
+				<button id="bg_color_badge" class="action inactive_tool icon left"><span class="color_badge"></span></button>
+				<button id="bg_color_hex" class="action inactive_tool right pair">#</button>
+			</div>
+
+			<div class="clear"></div>
+		</nav>
+
+			<button class="secondary important">Secondary</button>
+			<button class="disabled important">Disabled</button>
+
+			<input type="text" />
+
+			<select>
+				<option></option>
+				<option>just a test</option>
+			</select>
+<br /> <br />
+
+		<button id="show_menu" class="icon"><img src="../images/show_menu.png" /></button>
+
+		<section id="menu">
+			<button id="add_element" class="important primary">Add Element</button>
+
+			<ul>
+				<li class="important active">Attributes</li>
+				<li>Click Actions</li>
+				<li>Transitions</li>
+				<li>Notes</li>
+				<li class="detail hide">hide</li>
+			</ul>
+		</section>
+
+		<fieldset>
+			<legend>Borders</legend>
+			<input type="checkbox" id="border_top" /><label for="border_top">Top</label>
+			<input type="checkbox" id="border_right" /><label for="border_right">Right</label>
+			<input type="checkbox" id="border_bottom" /><label for="border_bottom">Bottom</label>
+			<input type="checkbox" id="border_left" /><label for="border_left">Left</label>
+
+			<div>
+				<div class="grouped">
+					<button id="border_color_badge" class="action icon left"><span class="color_badge"></span></button>
+					<button id="border_color_hex" class="action right pair">#</button>
+				</div>
+		</fieldset>
+
+		<section id="canvas">
+				<span class="element" etype="box" style="height:150px; width: 300px; background: #a4e31c"></span>
+				<span class="element" etype="text" style="left:500px; top: 200px;">Sample Text Element</span>
+		</section>
+	</body>
+</html>

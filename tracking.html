@@ -1,0 +1,29 @@
+<!DOCTYPE  HTML>
+<html>
+	<head>
+		<title></title>
+		<script src="scripts/jquery.js"></script>
+
+<script>
+
+var tracked_clicks = {};
+var track_attr = ["clicked"];
+var user_id = $("body").attr("user_id");
+
+$(document).ready(function(){
+	$(".track").on("click", function(){
+		$.each(track_attr, function(){
+			tracked_clicks[e_id]
+		});
+		
+		console.log(tracked_clicks);
+	});
+});
+</script>
+
+	</head>
+	<body user_id="Aaron">
+		<span class="track" id="42">test</span>
+		<span class="track" id="22">test</span>
+	</body>
+</html>

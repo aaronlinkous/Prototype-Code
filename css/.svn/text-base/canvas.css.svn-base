@@ -1,0 +1,53 @@
+#canvas {
+	width: 1024px;
+	height: 768px;
+	display: block;
+	position: relative;
+	border: 1px solid #d9d9d9;
+	}
+
+.element {
+	cursor: default;
+	float: left;
+	position: absolute !important;
+	z-index: 2;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	}
+
+.marker {
+	position: absolute;
+	z-index: 1;
+	background: #00aeef;
+	opacity: 0;
+	}
+
+.active_element {
+	outline: 1px dashed #00aeef;
+	}
+
+.vert {
+	width: 1px;
+	height: 100%;
+	float: left;
+	}
+
+.horiz {
+	height: 1px;
+	width: 100%;
+	}
+
+.most_active, .editing {
+	outline: 2px dashed red;
+	}
+
+.editing {
+	-webkit-user-select: text;
+	-moz-user-select: text;
+	cursor: default;
+	}
+
+.not_active {
+	opacity: .33 !important;
+	cursor: default;
+	}

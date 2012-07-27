@@ -1,0 +1,159 @@
+<!DOCTYPE  HTML>
+<html>
+	<head>
+		<title></title>
+		<script src="scripts/jquery.js"></script>
+
+		<script>
+			$(document).ready(function(){
+				$(".slide").live("click", function(){
+					$(".slide").removeClass("active");
+					$(this).addClass("active");
+				});
+
+				var timelines = 1;
+				var timeline_names = ["main"];
+				$(".dup").live("click", function(){
+					if($(this).hasClass("new")){
+						new_time = prompt("Name?");
+						$(".context").parent().append($(".context").clone().removeClass("active").attr("timeline",new_time));
+						timelines++;
+						timeline_names.push(new_time);
+					}else{
+						dup_to = $(this).attr("timeline");
+						$(".context").parent().append($(".context").clone().removeClass("active").attr("timeline",new_time));
+					}
+				});
+
+				$(".slide").live("contextmenu", function(e) {
+					e.preventDefault();
+					$(this).addClass("context");
+
+					$("#context li:not(.new)").remove();
+
+					slide = [];
+					$(".context").parent().children("li").each(function(){
+						slide.push($(this).attr("timeline"));
+					});
+
+					$.each(timeline_names,function(i,val){
+						if($.inArray(val,slide) == -1) $("#context ul").append('<li class="dup" timeline="'+val+'">'+val+' Timeline</li>');
+					});
+
+					$("#context").show();
+					$(this).addClass("context");
+
+					return false;
+				});
+
+				$(document).live("click", function(){
+					$("#context").hide();
+					$(".slide").removeClass("context"); 
+				});
+			});
+		</script>
+
+		<style>
+			body {
+				height: 100%;
+				width: 100%;
+				padding: 0;
+				margin: 0;
+				background: #444;
+				}
+
+			#timelines {
+				border: 1px solid #f8f8f8;
+				}
+
+			ul,li {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				}
+
+			.slides {
+				float: left;
+				}
+
+			.slide {
+				margin: 15px;
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				}
+
+			.slides:hover {
+				background: rgba(255,255,255, .3);
+				}
+
+			#context li {
+				list-style: none;
+				border-bottom: 1px solid #333;
+				}
+
+			.clear {
+				clear: both;
+				}
+
+			li.active {
+				background: green;
+				}
+
+			#context {
+				position: absolute;
+				z-index: 2;
+				display: none;
+				background-color: #ccc;
+				}
+
+			.context {
+				background-color: #ff0;
+				}
+		</style>
+	</head>
+	<body>
+		<div id="context">
+			duplicate to:
+			<ul>
+				<li class="dup new">Add to new timeline</li>
+			</ul>
+		</div>
+
+		<div id="timelines">
+			<ul>
+				<li slide="1"  class="slides">
+					<ul>
+						<li class="slide" timeline="main"></li>
+					</ul>
+				</li>
+				<li slide="2"  class="slides">
+					<ul>
+						<li class="slide" timeline="main"></li>
+					</ul>
+				</li>
+				<li slide="3"  class="slides">
+					<ul>
+						<li class="slide" timeline="main"></li>
+					</ul>
+				</li>
+				<li slide="4"  class="slides">
+					<ul>
+						<li class="slide" timeline="main"></li>
+					</ul>
+				</li>
+				<li slide="5"  class="slides">
+					<ul>
+						<li class="slide" timeline="main"></li>
+					</ul>
+				</li>
+				<li slide="6"  class="slides">
+					<ul>
+						<li class="slide" timeline="main"></li>
+					</ul>
+				</li>
+				<div class="clear"></div>
+			</ul>
+		</div>
+	</body>
+</html>
